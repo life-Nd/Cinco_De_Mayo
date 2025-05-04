@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinco de Mayo Quebec</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .parallax {
+            background-image: url('https://images.pexels.com/photos/1054777/pexels-photo-1054777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+        .split-screen {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+        @media (min-width: 768px) {
+            .split-screen {
+                flex-direction: row;
+                height: 100vh;
+            }
+        }
+        .left {
+            width: 100%;
+            background-color: #ffed4a;
+            color: #333;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .left {
+                width: 50%;
+                padding: 4rem;
+            }
+        }
+        .right {
+            width: 100%;
+            height: 400px;
+            background-image: url('https://images.pexels.com/photos/1191539/pexels-photo-1191539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            animation: slideInRight 1s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .right {
+                width: 50%;
+                height: auto;
+            }
+        }
+        .cta-button {
+            background-color: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #d35400;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .service-card {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 7px 7px 14px #d9d9d9, -7px -7px 14px #ffffff;
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: #e67e22;
+            margin-bottom: 1rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .swiper {
+            width: 100%;
+            height: 300px;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white shadow">
+        <div class="container mx-auto py-4 px-6">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-green-600">Cinco de Mayo Quebec</a>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-green-500">Services</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Events</a>
+                    <a href="#" class="text-gray-700 hover:text-green-500">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="split-screen">
+        <div class="left">
+            <h1 class="text-4xl font-extrabold mb-4">Celebrate Cinco de Mayo in Quebec!</h1>
+            <p class="text-lg mb-8">We bring the fiesta to you with authentic celebrations and unforgettable experiences.</p>
+            <a href="#" class="cta-button">Book Your Event</a>
+        </div>
+        <div class="right"></div>
+    </section>
+
+    <section class="parallax"></section>
+
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt service-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Event Planning</h3>
+                    <p class="text-gray-700">Comprehensive event planning services, from initial concept to flawless execution. We handle all the details so you can enjoy the fiesta!</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-utensils service-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Catering &amp; Drinks</h3>
+                    <p class="text-gray-700">Authentic Mexican cuisine and a wide selection of refreshing beverages, including margaritas, cervezas, and aguas frescas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-music service-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Entertainment</h3>
+                    <p class="text-gray-700">Live mariachi bands, DJs playing Latin rhythms, and traditional Mexican dance performances to keep the party going all night long.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-8">About Us</h2>
+            <div class="md:flex gap-8">
+                <div class="md:w-1/2">
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><img src="https://images.pexels.com/photos/3785424/pexels-photo-3785424.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="About Us"></div>
+                            <div class="swiper-slide"><img src="https://images.pexels.com/photos/762669/pexels-photo-762669.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Team"></div>
+                            <div class="swiper-slide"><img src="https://images.pexels.com/photos/2474684/pexels-photo-2474684.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Celebration"></div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-gray-700 mb-4">We are a team of passionate event organizers dedicated to bringing the vibrant spirit of Cinco de Mayo to Quebec. With years of experience, we specialize in creating authentic and unforgettable celebrations for businesses, communities, and private events.</p>
+                    <p class="text-gray-700">Our mission is to provide exceptional service and create memorable experiences that honor Mexican culture and traditions. Let us help you plan your next fiesta!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-8">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/6247827/pexels-photo-6247827.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400" alt="Cinco de Mayo Event">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400" alt="Mexican Food">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/692441/pexels-photo-692441.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400" alt="Celebration">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/1626486/pexels-photo-1626486.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400" alt="Mexican Dancers">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/8479640/pexels-photo-8479640.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400" alt="Party">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/2061199/pexels-photo-2061199.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400" alt="Mexican Decorations">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-6">
+            <div class="md:flex justify-between items-center">
+                <p class="text-center md:text-left">© 2024 Cinco de Mayo Quebec</p>
+                <div class="mt-4 md:mt-0 text-center md:text-right">
+                    <a href="#" class="text-gray-300 hover:text-white mr-4">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+
+</body></html>
